@@ -1,0 +1,82 @@
+<html>
+
+<!-- Mirrored from poe.trade/html/tags.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 24 Jul 2018 23:14:36 GMT -->
+<head>
+<style>
+code {
+        background-color: #eee;
+        border: 1px solid #aaa;
+}
+</style>
+</head>
+<body>
+<h4>Changelog</h4>
+<ul>
+<li>September 3, 2017 &mdash; <code>~c/o</code>, <code>~gb/o</code> are deprecated. Support for them will be removed within a week.</li>
+<li>April 30, 2014 &mdash; Added new tag, <code>~price</code>, which could be used to specify a non-negotiable item price.</li>
+</ul>
+<h2>Premium stash tab users</h2>
+You probably don't need to read the rest of this document. Instead, read <a href="public-stash-tabs.html">this</a>.
+
+<h2>Acquisition users</h2>
+Likewise, you probably don't need to read the rest. Just use the program, it does everything.
+
+<h2>Add buyout tags to your forum-based shop.</h2>
+<p>There are 2 types of tags:</p>
+<ul>
+<li>Spoiler title.<br/>Only items inside the spoiler are affected. All local tags are supported.</li>
+<li>Local.<br/>The previous item is affected. There are two local tags: <code>~b/o</code> which specifies buyout price and <code>~price</code> which specifies a non-negotiable buyout price.</li>
+</ul>
+
+<h3>Currency format</h3>
+<p>Currency should be written as pair of positive number (decimal fractions are allowed) and currency name.</p>
+<p><code>1.33 alch</code> and <code>0.1 exa</code> are valid currency records while <code>-1 exa</code> and <code>1 alch 1 exa</code> aren't.</p>
+<p>Here's the full list of supported currencies (plural forms are allowed as well):
+<ul>
+<li>Chromatic Orb &mdash; <code>chrom</code></li>
+<li>Orb of Alteration &mdash; <code>alt</code></li>
+<li>Jeweller's Orb &mdash; <code>jewel</code></li>
+<li>Orb of Chance &mdash; <code>chance</code></li>
+<li>Cartographer's Chisel &mdash; <code>chisel</code>, <code>cartographer</code></li>
+<li>Orb of Fusing &mdash; <code>fuse</code>, <code>fusing</code></li>
+<li>Orb of Alchemy &mdash; <code>alch</code></li>
+<li>Orb of Scouring &mdash; <code>scour</code></li>
+<li>Blessed Orb &mdash; <code>blessed</code></li>
+<li>Chaos Orb &mdash; <code>chaos</code></li>
+<li>Orb of Regret &mdash; <code>regret</code></li>
+<li>Regal Orb &mdash; <code>regal</code></li>
+<li>Gemcutter's Prism &mdash; <code>gcp</code>, <code>gemcutter</code></li>
+<li>Divine Orb &mdash; <code>divine</code></li>
+<li>Exalted Orb &mdash; <code>exalted</code>, <code>exa</code></li>
+<li>Mirror of Kalandra &mdash; <code>mirror</code></li>
+<li>Perandus Coin &mdash; <code>perandus</code></li>
+<li>Silver Coin &mdash; <code>silver</code></li>
+</ul></p>
+
+<h3>Example</h3>
+An example of a topic
+<pre>
+This is a very expensive item with buyout specified:
+[item]
+~b/o 500 exa
+
+[spoiler="the extra content ~b/o 1 alch may be anywhere!"]
+        Everything here is 1 alch!
+        [item]
+        .. but this item is slightly more expensive
+        [item]
+        ~b/o 1.1 alch
+
+        [spoiler="~b/o 1.9 alch"]
+                Nested spoilers are allowed as well. They will work just as you expect them to.
+                [item]
+        [/spoiler]
+
+        [item]
+        (^ this item is also 1 alch)
+[/spoiler]
+</pre>
+</body>
+
+<!-- Mirrored from poe.trade/html/tags.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 24 Jul 2018 23:14:37 GMT -->
+</html>
